@@ -3,8 +3,12 @@ pipeline{
     stages{
         stage('clone the repo'){
             steps{
-                git url: 'https://github.com/vvishan/tester.git', 
-                branch: 'main'
+                checkout([
+                    $class: 'GitSCM',
+                    branches: [[name: '*/main']],
+                    userRemoteConfigs: [[url: 'https://github.com/vvishan/tester.git']],
+                    extensions: [[$class: 'RelativeTargetDirectory', relativeTargetDir: 'tester']]
+                ])
             }
         }
         stage('run a file'){
