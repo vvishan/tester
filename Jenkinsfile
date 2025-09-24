@@ -7,7 +7,7 @@ pipeline{
                     $class: 'GitSCM',
                     branches: [[name: '*/main']],
                     userRemoteConfigs: [[url: 'https://github.com/vvishan/tester.git']],
-                    extensions: [[$class: 'RelativeTargetDirectory', relativeTargetDir: 'tester']]
+                   // extensions: [[$class: 'RelativeTargetDirectory', relativeTargetDir: 'tester']]
                 ])
             }
         }
