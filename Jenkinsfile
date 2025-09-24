@@ -4,7 +4,7 @@ pipeline{
         stage('clone the repo'){
             steps{
                 git url: 'https://github.com/vvishan/tester.git', 
-                        branch: 'main',
+                branch: 'main',
             }
         }
     }
