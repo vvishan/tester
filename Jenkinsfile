@@ -7,5 +7,14 @@ pipeline{
                 branch: 'main'
             }
         }
+        stage('run a file'){
+            steps{
+                script{
+                    dir('tester'){
+                        sh 'python3 hw.py'
+                    }
+                }
+            }
+        }
     }
 }
