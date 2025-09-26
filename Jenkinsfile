@@ -19,6 +19,13 @@ pipeline{
                     }
                 }
             }
+        stage('run dataprocessing'){
+            steps{
+                script{
+                    sh 'python importtest.ipynb'
+                }
+            }
+        }
         }
     }
 }
