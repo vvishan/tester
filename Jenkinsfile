@@ -24,8 +24,11 @@ pipeline{
             steps{
                 script{
                     dir('tester'){
-                        sh 'sudo pip install papermill --break-system-packages'
-                        sh 'papermill importtest.ipynb -p start_date "2025-01-01"'
+                        sh '''python3 -m venv venv_papermill
+                        source venv_papermill/bin/activate
+                        pip install papermill
+                        papermill importtest.ipynb -p start_date "2025-01-01"
+                        '''
 
                         //sh 'jupyter nbconvert --to script importtest.ipynb'
                         //sh 'python importtest.py'
