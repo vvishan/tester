@@ -24,7 +24,8 @@ pipeline{
             steps{
                 script{
                     dir('tester'){
-                        sh 'python importtest.ipynb'
+                        sh 'jupyter nbconvert --to script importtest.ipynb'
+                        sh 'python importtest.py'
                     }
                     
                 }
