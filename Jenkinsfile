@@ -24,8 +24,8 @@ pipeline{
             steps{
                 script{
                     dir('tester'){
-                        //sh 'pip install papermill'
-                        sh 'python importtest.ipynb'
+                        sh 'pip install papermill'
+                        sh 'papermill importtest.ipynb -p start_date "2025-01-01"'
 
                         //sh 'jupyter nbconvert --to script importtest.ipynb'
                         //sh 'python importtest.py'
