@@ -24,7 +24,7 @@ pipeline{
             steps{
                 script{
                     dir('tester'){
-                        sh 'jupyter nbcovert --execute importtest.ipynb'
+                        sh 'jupyter nbconvert --execute importtest.ipynb'
 
                         //sh 'jupyter nbconvert --to script importtest.ipynb'
                         //sh 'python importtest.py'
