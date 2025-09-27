@@ -15,7 +15,7 @@ pipeline{
             steps{
                 script{
                     dir('tester'){
-                        sh 'python hw.py'
+                        sh 'python3 hw.py'
                     }
                 }
             }
@@ -24,11 +24,7 @@ pipeline{
             steps{
                 script{
                     dir('tester'){
-                        sh '''python3 -m venv venv_papermill
-                        source venv_papermill/bin/activate
-                        pip install papermill
-                        papermill importtest.ipynb -p start_date "2025-01-01"
-                        '''
+                        sh 'jupyter nbcovert --execute importtest.ipynb'
 
                         //sh 'jupyter nbconvert --to script importtest.ipynb'
                         //sh 'python importtest.py'
