@@ -15,7 +15,7 @@ pipeline{
             steps{
                 script{
                     dir('tester'){
-                        sh 'python3 hw.py'
+                        sh 'python hw.py'
                     }
                 }
             }
